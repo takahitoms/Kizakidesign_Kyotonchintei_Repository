@@ -1,7 +1,7 @@
 {
   "routes": [
     {
-      "route": "/Kizakidesign-Kyotonchintei",
+      "route": "/reserve",
       "redirect": "https://akr6025958183.owst.jp/",
       "statusCode": 301
     }
