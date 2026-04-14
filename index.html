@@ -1,20 +1,136 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Redirect</title>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17418263639">
-    </script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      gtag('config', 'AW-17418263639');
-    </script>
-  </head>
-  <body>
-    Redirecting...
-  </body>
+  <title>鉄板居酒屋 京とんちん亭 みやこみち店｜席予約</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17418263639"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17418263639');
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont,
+                   "Hiragino Kaku Gothic ProN", "Yu Gothic",
+                   Meiryo, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #fff;
+    }
+
+    .hero {
+      position: relative;
+      background-image: url("restaurant.jpg");
+      background-size: cover;
+      background-position: center;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+    }
+
+    .hero h1 {
+      position: relative;
+      color: #fff;
+      font-size: 1.8rem;
+      text-align: center;
+      padding: 0 1rem;
+    }
+
+    .content {
+      padding: 1.5rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .tel {
+      font-size: 1.1rem;
+      margin: 1.5rem 0;
+      text-align: center;
+    }
+
+    .tel a {
+      color: #c00;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .reserve {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .reserve a {
+      display: inline-block;
+      background: #c00;
+      color: #fff;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      font-size: 1.1rem;
+      border-radius: 6px;
+    }
+
+    .map {
+      margin-top: 2.5rem;
+    }
+
+    iframe {
+      width: 100%;
+      height: 350px;
+      border: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ①② 店名＋店舗全景写真 -->
+  <div class="hero">
+    <h1>鉄板居酒屋<br>京とんちん亭 みやこみち店</h1>
+  </div>
+
+  <div class="content">
+
+    <!-- ③ 電話番号 -->
+    <div class="tel">
+      📞 お電話でのご予約：<br>
+      <a href="tel:0756939911">075-693-9911</a>
+    </div>
+
+    <!-- ④ 予約ボタン -->
+    <div class="reserve">
+      <a href="https://www.hotpepper.jp/strJ000759092/yoyaku/hpds/?ROUTE_KBN=20"
+         target="_blank" rel="noopener">
+        ▶ 席を予約する
+      </a>
+    </div>
+
+    <!-- ⑤ Googleマップ -->
+    <div class="map">
+      <iframe
+        src="https://www.google.com/maps?q=京とんちん亭みやこみち店&output=embed"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+  </div>
+
+</body>
 </html>
