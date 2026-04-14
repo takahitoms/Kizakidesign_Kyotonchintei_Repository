@@ -57,12 +57,12 @@
       padding: 1.5rem;
       max-width: 800px;
       margin: auto;
+      text-align: center;
     }
 
     .tel {
       font-size: 1.1rem;
       margin: 1.5rem 0;
-      text-align: center;
     }
 
     .tel a {
@@ -79,14 +79,65 @@
       font-size: 1.05rem;
       border-radius: 6px;
       color: #fff;
-      margin: 0.5rem 0;
+      margin: 0.6rem 0;
+    }
+
+    .btn-gallery {
+      background: #666;
     }
 
     .btn-reserve {
       background: #c00;
     }
 
-    .btn-gallery {
-      background: #666;
+    .map {
+      margin-top: 2.5rem;
     }
-    
+
+    iframe {
+      width: 100%;
+      height: 350px;
+      border: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 店名＋背景画像 -->
+  <div class="hero">
+    <h1>鉄板居酒屋<br>京とんちん亭 みやこみち店</h1>
+  </div>
+
+  <div class="content">
+
+    <!-- 電話 -->
+    <div class="tel">
+      📞 お電話でのご予約：<br>
+      <a href="tel:0756939911">075-693-9911</a>
+    </div>
+
+    <!-- ギャラリーボタン -->
+    <a href="gallery.html" class="btn btn-gallery">
+      ▶ 店内ギャラリーを見る
+    </a><br>
+
+    <!-- 予約ボタン -->
+    <a href="https://www.hotpepper.jp/strJ000759092/yoyaku/hpds/?ROUTE_KBN=20"
+       class="btn btn-reserve" target="_blank" rel="noopener">
+      ▶ 席を予約する
+    </a>
+
+    <!-- Googleマップ -->
+    <div class="map">
+      <iframe
+        src="https://www.google.com/maps?q=京とんちん亭みやこみち店&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+  </div>
+
+</body>
+</html>
