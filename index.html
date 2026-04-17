@@ -21,6 +21,21 @@
       'phone_conversion_number': '0756939911'
     });
 
+    <!-- Event snippet for 自社Webサイトから経路案内 conversion page
+      In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    function gtag_report_conversion(url) {
+    var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+      'send_to': 'AW-17418263639/Byj5COD-pfwaENe41vFA',
+      'event_callback': callback
+    });
+  return false;
+}
+    
   </script>
 
   <style>
