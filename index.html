@@ -12,30 +12,42 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    
+
     /* ベースの Google 広告タグ */
     gtag('config', 'AW-17418263639');
 
-    /* 電話番号スニペット（電話コンバージョン） */
+    /* 電話番号スニペット（広告電話コンバージョン） */
     gtag('config', 'AW-17418263639/JzXHCN3q1oobENe41vFA', {
       'phone_conversion_number': '0756939911'
     });
 
-    <!-- Event snippet for 自社Webサイトから経路案内 conversion page
-      In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-    function gtag_report_conversion(url) {
-    var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-      }
-    };
-    gtag('event', 'conversion', {
-      'send_to': 'AW-17418263639/Byj5COD-pfwaENe41vFA',
-      'event_callback': callback
-    });
-  return false;
-}
-    
+    /* 経路検索（Googleマップ）コンバージョン */
+    function gtag_report_route(url) {
+      var callback = function () {
+        if (typeof(url) !== 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+        'send_to': 'AW-17418263639/Byj5COD-pfwaENe41vFA',
+        'event_callback': callback
+      });
+      return false;
+    }
+
+    /* 自社Web → ホットペッパー（OWST）遷移コンバージョン */
+    function gtag_report_hotpepper(url) {
+      var callback = function () {
+        if (typeof(url) !== 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+        'send_to': 'AW-17418263639/DH8sCLCim4EcENe41vFA',
+        'event_callback': callback
+      });
+      return false;
+    }
   </script>
 
   <style>
@@ -105,13 +117,9 @@
       margin: 0.6rem 0;
     }
 
-    .btn-gallery {
-      background: #c00;
-    }
-
-    .btn-reserve {
-      background: #c00;
-    }
+    .btn-reserve { background: #c00; }
+    .btn-gallery { background: #666; }
+    .btn-route   { background: #1a73e8; }
 
     .map {
       margin-top: 2.5rem;
@@ -134,32 +142,45 @@
 
   <div class="content">
 
-    <!-- 電話 -->
+    <!-- 電話番号（Webタップは通常遷移。広告電話はスニペットで計測） -->
     <div class="tel">
       📞 お電話でのご予約：<br>
       <a href="tel:0756939911">075-693-9911</a>
     </div>
 
-    <!-- 予約ボタン -->
-    <a href="https://www.hotpepper.jp/strJ000759092/yoyaku/hpds/?ROUTE_KBN=20"
-       class="btn btn-reserve" target="_blank" rel="noopener">
+    <!-- 予約ボタン：自社Web → ホットペッパー遷移CV -->
+    <a
+      href="https://www.hotpepper.jp/strJ000759092/yoyaku/hpds/?ROUTE_KBN=20"
+      class="btn btn-reserve"
+      target="_blank"
+      rel="noopener"
+      onclick="return gtag_report_hotpepper(this.href);"
+    >
       ▶ 席を予約する
-    </a>
+    </a><br>
 
-    <!-- ギャラリーボタン -->
-    <a href="https://akr6025958183.owst.jp/gallery"
-       class="btn btn-gallery">
+    <!-- ギャラリーボタン（CVなし） -->
+    <a
+      href="https://akr6025958183.owst.jp/gallery"
+      class="btn btn-gallery"
+      target="_blank"
+      rel="noopener"
+    >
       ▶ 店内ギャラリーを見る
     </a><br>
 
-   <!-- 経路検索ボタン（Google広告CV対象） -->
-    <a href="https://www.google.com/maps?q=京とんちん亭みやこみち店"
-       class="btn btn-route"
-       onclick="return gtag_report_conversion(this.href);">
+    <!-- 経路検索ボタン：Googleマップ遷移CV -->
+    <a
+      href="https://www.google.com/maps?q=京とんちん亭みやこみち店"
+      class="btn btn-route"
+      target="_blank"
+      rel="noopener"
+      onclick="return gtag_report_route(this.href);"
+    >
       ▶ 経路を検索する
     </a>
-   
-    <!-- Googleマップ -->
+
+    <!-- 地図表示（表示のみ・CV対象外） -->
     <div class="map">
       <iframe
         src="https://www.google.com/maps?q=京とんちん亭みやこみち店&output=embed"
