@@ -12,7 +12,15 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+    
+    /* ベースの Google 広告タグ */
     gtag('config', 'AW-17418263639');
+
+    /* 電話番号スニペット（電話コンバージョン） */
+    gtag('config', 'AW-17418263639/JzXHCN3q1oobENe41vFA', {
+      'phone_conversion_number': '0756939911'
+    });
+
   </script>
 
   <style>
